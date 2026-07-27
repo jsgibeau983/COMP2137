@@ -15,7 +15,7 @@ ssh-keygen -R server2-mgmt &>/dev/null
 
 # SERVER 1 
 echo "Transfering script to server1"
-# Added connection timeout and automatic key acceptance
+# timeout and ssh accept
 scp -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new configure-host.sh remoteadmin@server1-mgmt:/root
 if [ $? -ne 0 ]; then
     echo "Error: Failed to copy script to server1-mgmt" >&2
@@ -23,7 +23,7 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Running script on server1"
-# Added connection timeout and automatic key acceptance
+# timeout and ssh accept
 ssh -o ConnectTimeout=5 -o StrictHostKeyChecking=accept-new remoteadmin@server1-mgmt -- /root/configure-host.sh $VERBOSE_OPTION -name loghost -ip 192.168.16.3 -hostentry webhost 192.168.16.4
 if [ $? -ne 0 ]; then
     echo "Error: Script failed" >&2
@@ -47,7 +47,7 @@ if [ $? -ne 0 ]; then
 fi
 
 
-# --- LOCAL HOST MACHINE UPDATES ---
+#local host update
 echo "Updating local host entry"
 sudo ./configure-host.sh $VERBOSE_OPTION -hostentry loghost 192.168.16.3
 if [ $? -ne 0 ]; then
