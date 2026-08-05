@@ -1,0 +1,284 @@
+###################
+Preparing system changes
+###################
+
+######################################
+[INFO] Setting up YALM file and hosts file
+######################################
+
+
+######################################
+[INFO] installing Apache2 and Squid
+######################################
+######################################
+[INFO] updating package list
+######################################
+Get:1 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Hit:2 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:3 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [918 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,174 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/main Translation-en [200 kB]
+Get:7 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1,304 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [280 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1,398 kB]
+Get:10 http://security.ubuntu.com/ubuntu noble-security/restricted Translation-en [298 kB]
+Get:11 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,199 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe Translation-en [239 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [316 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,681 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [334 kB]
+Fetched 9,594 kB in 2s (4,038 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+All packages are up to date.
+######################################
+[INFO] Installing softwares
+######################################
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  apache2-bin apache2-data apache2-utils libapr1t64 libaprutil1-dbd-sqlite3
+  libaprutil1-ldap libaprutil1t64 libdbi-perl libecap3 libgdbm-compat4t64
+  libgdbm6t64 libjansson4 libltdl7 liblua5.4-0 libnetfilter-conntrack3
+  libnfnetlink0 libperl5.38t64 libtdb1 perl perl-modules-5.38 squid-common
+  squid-langpack ssl-cert
+Suggested packages:
+  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser ufw
+  libclone-perl libmldbm-perl libnet-daemon-perl libsql-statement-perl
+  gdbm-l10n perl-doc libterm-readline-gnu-perl | libterm-readline-perl-perl
+  make libtap-harness-archive-perl squidclient squid-cgi squid-purge
+  resolvconf smbclient winbind apparmor
+The following NEW packages will be installed:
+  apache2 apache2-bin apache2-data apache2-utils libapr1t64
+  libaprutil1-dbd-sqlite3 libaprutil1-ldap libaprutil1t64 libdbi-perl libecap3
+  libgdbm-compat4t64 libgdbm6t64 libjansson4 libltdl7 liblua5.4-0
+  libnetfilter-conntrack3 libnfnetlink0 libperl5.38t64 libtdb1 perl
+  perl-modules-5.38 squid squid-common squid-langpack ssl-cert
+0 upgraded, 25 newly installed, 0 to remove and 0 not upgraded.
+Need to get 14.4 MB of archives.
+After this operation, 74.9 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl-modules-5.38 all 5.38.2-3.2ubuntu0.3 [3,110 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm6t64 amd64 1.23-5.1build1 [34.4 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 libgdbm-compat4t64 amd64 1.23-5.1build1 [6,710 B]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libperl5.38t64 amd64 5.38.2-3.2ubuntu0.3 [4,876 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 perl amd64 5.38.2-3.2ubuntu0.3 [231 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libapr1t64 amd64 1.7.2-3.1ubuntu0.1 [108 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1t64 amd64 1.6.3-1.1ubuntu7 [91.9 kB]
+Get:8 http://archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.3-1.1ubuntu7 [11.2 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/main amd64 libaprutil1-ldap amd64 1.6.3-1.1ubuntu7 [9,116 B]
+Get:10 http://archive.ubuntu.com/ubuntu noble/main amd64 libjansson4 amd64 2.14-2build2 [32.8 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble/main amd64 liblua5.4-0 amd64 5.4.6-3build2 [166 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-bin amd64 2.4.58-1ubuntu8.15 [1,338 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-data all 2.4.58-1ubuntu8.15 [163 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2-utils amd64 2.4.58-1ubuntu8.15 [99.7 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 apache2 amd64 2.4.58-1ubuntu8.15 [90.2 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble/main amd64 libecap3 amd64 1.0.1-3.4ubuntu2 [17.0 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble/main amd64 libltdl7 amd64 2.4.7-7build1 [40.3 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble/main amd64 libnfnetlink0 amd64 1.0.2-2build1 [14.8 kB]
+Get:19 http://archive.ubuntu.com/ubuntu noble/main amd64 libnetfilter-conntrack3 amd64 1.0.9-6build1 [45.2 kB]
+Get:20 http://archive.ubuntu.com/ubuntu noble/main amd64 libtdb1 amd64 1.4.10-1build1 [46.8 kB]
+Get:21 http://archive.ubuntu.com/ubuntu noble/main amd64 squid-langpack all 20220130-1 [175 kB]
+Get:22 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 squid-common all 6.14-0ubuntu0.24.04.4 [214 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libdbi-perl amd64 1.643-4ubuntu0.1 [720 kB]
+Get:24 http://archive.ubuntu.com/ubuntu noble/main amd64 ssl-cert all 1.1.2ubuntu1 [17.8 kB]
+Get:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 squid amd64 6.14-0ubuntu0.24.04.4 [2,746 kB]
+Preconfiguring packages ...
+Fetched 14.4 MB in 15s (947 kB/s)
+Selecting previously unselected package perl-modules-5.38.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 19696 files and directories currently installed.)
+Preparing to unpack .../00-perl-modules-5.38_5.38.2-3.2ubuntu0.3_all.deb ...
+Unpacking perl-modules-5.38 (5.38.2-3.2ubuntu0.3) ...
+Selecting previously unselected package libgdbm6t64:amd64.
+Preparing to unpack .../01-libgdbm6t64_1.23-5.1build1_amd64.deb ...
+Unpacking libgdbm6t64:amd64 (1.23-5.1build1) ...
+Selecting previously unselected package libgdbm-compat4t64:amd64.
+Preparing to unpack .../02-libgdbm-compat4t64_1.23-5.1build1_amd64.deb ...
+Unpacking libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
+Selecting previously unselected package libperl5.38t64:amd64.
+Preparing to unpack .../03-libperl5.38t64_5.38.2-3.2ubuntu0.3_amd64.deb ...
+Unpacking libperl5.38t64:amd64 (5.38.2-3.2ubuntu0.3) ...
+Selecting previously unselected package perl.
+Preparing to unpack .../04-perl_5.38.2-3.2ubuntu0.3_amd64.deb ...
+Unpacking perl (5.38.2-3.2ubuntu0.3) ...
+Selecting previously unselected package libapr1t64:amd64.
+Preparing to unpack .../05-libapr1t64_1.7.2-3.1ubuntu0.1_amd64.deb ...
+Unpacking libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Selecting previously unselected package libaprutil1t64:amd64.
+Preparing to unpack .../06-libaprutil1t64_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-dbd-sqlite3:amd64.
+Preparing to unpack .../07-libaprutil1-dbd-sqlite3_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libaprutil1-ldap:amd64.
+Preparing to unpack .../08-libaprutil1-ldap_1.6.3-1.1ubuntu7_amd64.deb ...
+Unpacking libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Selecting previously unselected package libjansson4:amd64.
+Preparing to unpack .../09-libjansson4_2.14-2build2_amd64.deb ...
+Unpacking libjansson4:amd64 (2.14-2build2) ...
+Selecting previously unselected package liblua5.4-0:amd64.
+Preparing to unpack .../10-liblua5.4-0_5.4.6-3build2_amd64.deb ...
+Unpacking liblua5.4-0:amd64 (5.4.6-3build2) ...
+Selecting previously unselected package apache2-bin.
+Preparing to unpack .../11-apache2-bin_2.4.58-1ubuntu8.15_amd64.deb ...
+Unpacking apache2-bin (2.4.58-1ubuntu8.15) ...
+Selecting previously unselected package apache2-data.
+Preparing to unpack .../12-apache2-data_2.4.58-1ubuntu8.15_all.deb ...
+Unpacking apache2-data (2.4.58-1ubuntu8.15) ...
+Selecting previously unselected package apache2-utils.
+Preparing to unpack .../13-apache2-utils_2.4.58-1ubuntu8.15_amd64.deb ...
+Unpacking apache2-utils (2.4.58-1ubuntu8.15) ...
+Selecting previously unselected package apache2.
+Preparing to unpack .../14-apache2_2.4.58-1ubuntu8.15_amd64.deb ...
+Unpacking apache2 (2.4.58-1ubuntu8.15) ...
+Selecting previously unselected package libecap3:amd64.
+Preparing to unpack .../15-libecap3_1.0.1-3.4ubuntu2_amd64.deb ...
+Unpacking libecap3:amd64 (1.0.1-3.4ubuntu2) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../16-libltdl7_2.4.7-7build1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.7-7build1) ...
+Selecting previously unselected package libnfnetlink0:amd64.
+Preparing to unpack .../17-libnfnetlink0_1.0.2-2build1_amd64.deb ...
+Unpacking libnfnetlink0:amd64 (1.0.2-2build1) ...
+Selecting previously unselected package libnetfilter-conntrack3:amd64.
+Preparing to unpack .../18-libnetfilter-conntrack3_1.0.9-6build1_amd64.deb ...
+Unpacking libnetfilter-conntrack3:amd64 (1.0.9-6build1) ...
+Selecting previously unselected package libtdb1:amd64.
+Preparing to unpack .../19-libtdb1_1.4.10-1build1_amd64.deb ...
+Unpacking libtdb1:amd64 (1.4.10-1build1) ...
+Selecting previously unselected package squid-langpack.
+Preparing to unpack .../20-squid-langpack_20220130-1_all.deb ...
+Unpacking squid-langpack (20220130-1) ...
+Selecting previously unselected package squid-common.
+Preparing to unpack .../21-squid-common_6.14-0ubuntu0.24.04.4_all.deb ...
+Unpacking squid-common (6.14-0ubuntu0.24.04.4) ...
+Selecting previously unselected package libdbi-perl:amd64.
+Preparing to unpack .../22-libdbi-perl_1.643-4ubuntu0.1_amd64.deb ...
+Unpacking libdbi-perl:amd64 (1.643-4ubuntu0.1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../23-ssl-cert_1.1.2ubuntu1_all.deb ...
+Unpacking ssl-cert (1.1.2ubuntu1) ...
+Selecting previously unselected package squid.
+Preparing to unpack .../24-squid_6.14-0ubuntu0.24.04.4_amd64.deb ...
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+Unpacking squid (6.14-0ubuntu0.24.04.4) ...
+Setting up libgdbm6t64:amd64 (1.23-5.1build1) ...
+Setting up libgdbm-compat4t64:amd64 (1.23-5.1build1) ...
+Setting up libtdb1:amd64 (1.4.10-1build1) ...
+Setting up squid-langpack (20220130-1) ...
+Setting up libjansson4:amd64 (2.14-2build2) ...
+Setting up ssl-cert (1.1.2ubuntu1) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ssl-cert.service → /usr/lib/systemd/system/ssl-cert.service.
+Setting up perl-modules-5.38 (5.38.2-3.2ubuntu0.3) ...
+Setting up libltdl7:amd64 (2.4.7-7build1) ...
+Setting up libnfnetlink0:amd64 (1.0.2-2build1) ...
+Setting up libapr1t64:amd64 (1.7.2-3.1ubuntu0.1) ...
+Setting up liblua5.4-0:amd64 (5.4.6-3build2) ...
+Setting up apache2-data (2.4.58-1ubuntu8.15) ...
+Setting up libperl5.38t64:amd64 (5.38.2-3.2ubuntu0.3) ...
+Setting up libecap3:amd64 (1.0.1-3.4ubuntu2) ...
+Setting up squid-common (6.14-0ubuntu0.24.04.4) ...
+Setting up libaprutil1t64:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up libaprutil1-ldap:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up libaprutil1-dbd-sqlite3:amd64 (1.6.3-1.1ubuntu7) ...
+Setting up perl (5.38.2-3.2ubuntu0.3) ...
+Setting up libnetfilter-conntrack3:amd64 (1.0.9-6build1) ...
+Setting up libdbi-perl:amd64 (1.643-4ubuntu0.1) ...
+Setting up apache2-utils (2.4.58-1ubuntu8.15) ...
+Setting up squid (6.14-0ubuntu0.24.04.4) ...
+Setcap worked! /usr/lib/squid/pinger is not suid!
+Created symlink /etc/systemd/system/multi-user.target.wants/squid.service → /usr/lib/systemd/system/squid.service.
+Setting up apache2-bin (2.4.58-1ubuntu8.15) ...
+Setting up apache2 (2.4.58-1ubuntu8.15) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache2.service → /usr/lib/systemd/system/apache2.service.
+Created symlink /etc/systemd/system/multi-user.target.wants/apache-htcacheclean.service → /usr/lib/systemd/system/apache-htcacheclean.service.
+Processing triggers for libc-bin (2.39-0ubuntu8.8) ...
+######################################
+[SUCCESS] Software installed successfully
+######################################
+######################################
+[INFO] Starting services
+######################################
+######################################
+[INFO] Both services are now started and running
+######################################
+
+######################################
+[INFO] Creating user accounts
+######################################
+######################################
+[INFO] Creating user: 'dennis'
+######################################
+######################################
+[INFO] Creating user: 'aubrey'
+######################################
+######################################
+[INFO] Creating user: 'captain'
+######################################
+######################################
+[INFO] Creating user: 'snibbles'
+######################################
+######################################
+[INFO] Creating user: 'brownie'
+######################################
+######################################
+[INFO] Creating user: 'scooter'
+######################################
+######################################
+[INFO] Creating user: 'sandy'
+######################################
+######################################
+[INFO] Creating user: 'perrier'
+######################################
+######################################
+[INFO] Creating user: 'cindy'
+######################################
+######################################
+[INFO] Creating user: 'tiger'
+######################################
+######################################
+[INFO] Creating user: 'yoda'
+######################################
+######################################
+[SUCCESS] All user accounts and ssh configurations created
+######################################
+
+######################################
+[INFO] Setting up elevated access for user dennis
+######################################
+######################################
+[SUCCESS] User dennis added to sudo
+######################################
+
+#################################################
+######################################
+[SUCCESS] Tasks run successfuly
+######################################
+#################################################
