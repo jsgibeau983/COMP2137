@@ -3,7 +3,6 @@ Warning: The unit file, source configuration file or drop-ins of systemd-network
 Warning: The unit file, source configuration file or drop-ins of netplan-ovs-cleanup.service changed on disk. Run 'systemctl daemon-reload' to reload units.
 dpkg-preconfigure: unable to re-open stdin: No such file or directory
 useradd warning: remoteadmin's uid 0 outside of the UID_MIN 1000 and UID_MAX 60000 range.
-Host server1-mgmt not found in /root/.ssh/known_hosts
 Warning: Permanently added 'server1-mgmt' (ED25519) to the list of known hosts.
 
 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
