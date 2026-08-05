@@ -1,0 +1,17 @@
+Verbose mode is enabled for deployment.
+Cleaning old keys
+Transfering script to server1
+Running script on server1
+Success: Changed hostname to loghost
+Success: Changed IP to 192.168.16.3
+Success: Added host entry 192.168.16.4 webhost
+Transfering script to server2
+Running script on server2
+Success: Changed hostname to webhost
+Success: Changed IP to 192.168.16.4
+Success: Added host entry 192.168.16.3 loghost
+Updating local host entry
+Host entry 192.168.16.3 loghost already exists. Doing nothing.
+Updating local host entry
+Host entry 192.168.16.4 webhost already exists. Doing nothing.
+Updated configs succesfully
