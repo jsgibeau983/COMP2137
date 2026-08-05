@@ -3,6 +3,12 @@
 # ignore signals TERM HUP and INT
 trap '' TERM HUP INT
 
+#check for errors in syntax
+if [ $# -eq 0 ] || { [ $# -eq 1 ] && { [ "$1" == "-v" ] || [ "$1" == "-verbose" ]; }; }; then
+    echo "Usage: $0 [-v|-verbose] [-n|-name NAME] [-i|-ip IP] [-hostentry HOST_NAME HOST_IP]" >&2
+    exit 1
+fi
+
 # variables
 VERBOSE="no"
 NAME=""
@@ -17,14 +23,18 @@ for (( i=1; i<=$#; i++ )); do
         VERBOSE="yes"
     elif [ "$ARGUMENT" == "-name" ] || [ "$ARGUMENT" == "-n" ]; then
         i=$((i + 1))
+        if [ $i -gt $# ]; then echo "Error: -name requires a value"; exit 1; fi
         NAME=${!i}
     elif [ "$ARGUMENT" == "-ip" ] || [ "$ARGUMENT" == "-i" ]; then
         i=$((i + 1))
+        if [ $i -gt $# ]; then echo "Error: -ip requires a value"; exit 1; fi
         IP=${!i}
     elif [ "$ARGUMENT" == "-hostentry" ]; then
         i=$((i + 1))
+        if [ $i -gt $# ]; then echo "Error: -hostentry requires a host name"; exit 1; fi
         HOST_NAME=${!i}
         i=$((i + 1))
+        if [ $i -gt $# ]; then echo "Error: -hostentry requires a host IP"; exit 1; fi
         HOST_IP=${!i}
     fi
 done
